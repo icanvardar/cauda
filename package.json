@@ -1,13 +1,17 @@
 {
-  "name": "broken",
+  "name": "cauda",
+  "description": "Queue-based polling mechanism.",
+  "author": {
+    "name": "Can Vardar",
+    "url": "https://github.com/icanvardar/cauda",
+    "email": "me@icanvardar.com"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "module": "index.js",
+  "types": "src/types.d.ts",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
