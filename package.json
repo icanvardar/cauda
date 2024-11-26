@@ -6,7 +6,7 @@
     "url": "https://github.com/icanvardar/cauda",
     "email": "me@icanvardar.com"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "module": "index.js",
