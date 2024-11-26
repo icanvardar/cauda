@@ -34,7 +34,7 @@ class Queue {
   }
 
   /**
-  * @return {string | undefined}
+  * @return {Item | undefined}
   */
   dequeue() {
     if (!this.#head) {
@@ -52,7 +52,7 @@ class Queue {
       this.#tail = undefined;
     }
 
-    return head.id;
+    return head.item;
   }
 
   /**
