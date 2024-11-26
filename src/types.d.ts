@@ -5,13 +5,14 @@ declare global {
     ADD,
     REMOVE,
     UPDATE,
-  }
+  };
 
   interface IQueue {
+    length: number;
     enqueue(item: Item): void;
-    dequeue(): string | undefined;
+    dequeue(): Item | undefined;
     peek(): Item | undefined;
-  }
+  };
 
   type Item = {
     proxy: string,
@@ -23,5 +24,9 @@ declare global {
     id: string,
     item: Item,
     next?: QueueNode,
+  };
+
+  interface IExtractor {
+    extractAll(queue: number): Item[];
   };
 };

@@ -1,27 +1,14 @@
-import Queue from "../src/queue.js";
-import { describe, it, mock, beforeEach } from "node:test";
+import { describe, it, beforeEach } from "node:test";
 import assert from "node:assert";
-
-const createQueue = mock.fn(function mock__createQueue() {
-  return new Queue();
-});
-
-const createItem = mock.fn(function mock__createItem(proxy, content, action) {
-  return {
-    proxy,
-    content,
-    action,
-  };
-});
+import { mocks, constants } from "./setup.mjs";
 
 describe("Queue class", () => {
   /** @type {IQueue} */
   let queue;
-  /** @type {Item} */
-  let item = createItem("https://pro.xy", { field: "test" }, 0);
+  let item = constants.item;
 
   beforeEach(() => {
-    queue = createQueue();
+    queue = mocks.createQueue();
   });
 
   it("enqueues and peaks item", () => {
@@ -39,7 +26,9 @@ describe("Queue class", () => {
 
     const result = queue.dequeue();
 
-    assert.strictEqual(typeof result, "string");
+    assert.equal(item.action, result.action);
+    assert.equal(item.content, result.content);
+    assert.equal(item.proxy, result.proxy);
   });
 
   it("tries to dequeue empty queue", () => {
