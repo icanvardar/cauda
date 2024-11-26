@@ -24,4 +24,8 @@ declare global {
     item: Item,
     next?: QueueNode,
   };
+
+  interface IExtractor {
+    extractAll(queue: number): Item[];
+  };
 };
